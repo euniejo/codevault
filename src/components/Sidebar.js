@@ -1,12 +1,12 @@
 import React from "react";
+import { HashLink as Link } from "react-router-hash-link"; // Import HashLink
 
 function Sidebar() {
-
   // eslint-disable-next-line no-unused-vars
-  const openSidebar = () => {
-    document.getElementById("mySidebar").style.display = "block";
-    document.getElementById("myOverlay").style.display = "block";
-  };
+  // const openSidebar = () => {
+  //   document.getElementById("mySidebar").style.display = "block";
+  //   document.getElementById("myOverlay").style.display = "block";
+  // };
 
   const closeSidebar = () => {
     document.getElementById("mySidebar").style.display = "none";
@@ -43,53 +43,58 @@ function Sidebar() {
           </h4>
         </div>
         <div className="w3-bar-block">
-          <a
-            href="#portfolio"
+          {/* React Router Link to Main Portfolio */}
+          <Link
+            to="/#portfolio"
             onClick={closeSidebar}
             className="w3-bar-item w3-button w3-padding w3-text-teal"
           >
             <i className="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO
-          </a>
-          <a
-            href="#about"
+          </Link>
+
+          {/* About Section */}
+          <Link
+            to="/#about"
             onClick={closeSidebar}
             className="w3-bar-item w3-button w3-padding"
           >
             <i className="fa fa-user fa-fw w3-margin-right"></i>ABOUT
-          </a>
-          <a
-            href="#contact"
+          </Link>
+
+          {/* Contact Section */}
+          <Link
+            to="/#contact"
             onClick={closeSidebar}
             className="w3-bar-item w3-button w3-padding"
           >
             <i className="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT
-          </a>
+          </Link>
         </div>
         <div className="w3-panel w3-large">
-            {/* Home Icon */}
-            <a href="/" className="icon-spacing" title="Home">
-              <i className="fa fa-home w3-hover-opacity"></i>
-            </a>
-            
-            {/* Email Icon */}
-            <a
-              href="mailto:iameuniejo@gmail.com?subject=Hello&body=I would like to connect with you!"
-              className="icon-spacing"
-              title="Send Email"
-            >
-              <i className="fa fa-envelope w3-hover-opacity"></i>
-            </a>
-            
-            {/* LinkedIn Icon */}
-            <a
-              href="https://www.linkedin.com/in/euniejo"
-              className="icon-spacing"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="LinkedIn"
-            >
-              <i className="fa fa-linkedin w3-hover-opacity"></i>
-            </a>
+          {/* Home Icon */}
+          <Link to="/#home" className="icon-spacing" title="Home">
+            <i className="fa fa-home w3-hover-opacity"></i>
+          </Link>
+
+          {/* Email Icon */}
+          <a
+            href="mailto:iameuniejo@gmail.com?subject=Hello&body=I would like to connect with you!"
+            className="icon-spacing"
+            title="Send Email"
+          >
+            <i className="fa fa-envelope w3-hover-opacity"></i>
+          </a>
+
+          {/* LinkedIn Icon */}
+          <a
+            href="https://www.linkedin.com/in/euniejo"
+            className="icon-spacing"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="LinkedIn"
+          >
+            <i className="fa fa-linkedin w3-hover-opacity"></i>
+          </a>
         </div>
       </nav>
       <div
